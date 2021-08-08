@@ -1,21 +1,21 @@
 
 #include <Servo.h>
 
-Servo servoA;
-Servo servoB;
-Servo servoC;
-Servo servoD;
-Servo servoE;
+Servo servo0;
+Servo servo1;
+Servo servo2;
+Servo servo3;
+Servo servo4;
 
 int servoPositions[5];
 void setup() {
   // put your setup code here, to run once:
 Serial.begin(9600);
-servoA.attach(3);
-servoB.attach(5);
-servoC.attach(6);
-servoD.attach(9);
-servoE.attach(10);
+servo0.attach(3);
+servo1.attach(5);
+servo2.attach(6);
+servo3.attach(9);
+servo4.attach(10);
 }
 
 void loop() {
@@ -28,11 +28,11 @@ while(Serial.available()){
   servoPositions[3] = input.substring(9,12).toInt();
   servoPositions[4] = input.substring(12,15).toInt();
 }
-servoA.write(servoPositions[0]);
-servoB.write(servoPositions[1]);
-servoC.write(servoPositions[2]);
-servoD.write(servoPositions[3]);
-servoE.write(servoPositions[4]);
+servo0.write(servoPositions[0]);
+servo1.write(servoPositions[1]);
+servo2.write(servoPositions[2]);
+servo3.write(servoPositions[3]);
+servo4.write(servoPositions[4]);
 
 delay(500);
 }
